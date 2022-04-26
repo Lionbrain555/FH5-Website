@@ -6,7 +6,7 @@
 /out-tsc
 
 # dependencies
-/node_modules
+FH5Website/node_modules
 
 # IDEs and editors
 /.idea
@@ -18,11 +18,11 @@
 *.sublime-workspace
 
 # IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+FH5Website/.vscode/*
+!FH5Website/.vscode/settings.json
+!FH5Website/.vscode/tasks.json
+!FH5Website/.vscode/launch.json
+!FH5Website/.vscode/extensions.json
 
 # misc
 /.sass-cache
@@ -40,3 +40,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+FH5Website/.angular
