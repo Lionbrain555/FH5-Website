@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {RouterModule, Routes} from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,15 +11,25 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {HttpClientModule} from '@angular/common/http';
 import {MaterialExampleModule} from '../material.module';
 import { CarsComponent } from './cars/cars.component';
+import { FunnycarsComponent } from './funnycars/funnycars.component';
+import { MapComponent } from './map/map.component';
 
+const allRoutes: Routes =[
+      {path: 'cars', component: CarsComponent},
+      {path: 'funnycars', component: FunnycarsComponent},
+      {path: 'map', component: MapComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
-    CarsComponent
+    CarsComponent,
+    FunnycarsComponent,
+    MapComponent
   ],
   imports: [
+    RouterModule.forRoot(allRoutes),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
