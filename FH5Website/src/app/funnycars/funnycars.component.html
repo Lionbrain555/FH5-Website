@@ -1,1 +1,17 @@
-<p>funnycars works!</p>
+<div class="car-card-wrapper" >
+  <mat-card class="car-card" *ngFor="let auto of funnycars">
+      <mat-card-header>
+          <div mat-card-avatar class="car-card-image " [style.background-image]="'url(' + auto.brandpic + ')'"></div>
+          <mat-card-title>{{auto.model}}</mat-card-title>
+          <mat-card-subtitle>{{auto.brand}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src={{auto.imageurl}}>
+      <mat-card-content>
+          <p>{{auto.whyfunny}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+          <button mat-button>RandomButton1</button>
+          <button mat-button>RandomButton2</button>
+      </mat-card-actions>
+  </mat-card>
+</div>

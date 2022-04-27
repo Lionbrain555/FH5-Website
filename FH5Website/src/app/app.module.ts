@@ -13,11 +13,13 @@ import {MaterialExampleModule} from '../material.module';
 import { CarsComponent } from './cars/cars.component';
 import { FunnycarsComponent } from './funnycars/funnycars.component';
 import { MapComponent } from './map/map.component';
+import { FestivalsComponent } from './festivals/festivals.component';
 
 const allRoutes: Routes =[
       {path: 'cars', component: CarsComponent},
       {path: 'funnycars', component: FunnycarsComponent},
-      {path: 'map', component: MapComponent}
+      {path: 'map', component: MapComponent},
+      {path: 'festivals', component: FestivalsComponent}
 ];
 
 @NgModule({
@@ -26,7 +28,8 @@ const allRoutes: Routes =[
     SidenavComponent,
     CarsComponent,
     FunnycarsComponent,
-    MapComponent
+    MapComponent,
+    FestivalsComponent
   ],
   imports: [
     RouterModule.forRoot(allRoutes),
