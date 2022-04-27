@@ -1,4 +1,4 @@
-.example-card {
+.car-card {
     max-width: 400px;
     margin: 8px;
     display: flex;
@@ -7,8 +7,7 @@
     max-height: 500px;
 }
   
-.example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+.car-card-image {
     background-size: cover;
 }
 
@@ -16,7 +15,4 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-.button-wrap{
-    
 }

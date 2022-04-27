@@ -9,14 +9,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import {HttpClientModule} from '@angular/common/http';
 import {MaterialExampleModule} from '../material.module';
-import { AutosComponent } from './autos/autos.component';
+import { CarsComponent } from './cars/cars.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
-    AutosComponent
+    CarsComponent
   ],
   imports: [
     BrowserModule,
