@@ -12,7 +12,7 @@
             <p>{{auto.wd}}</p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button>RandomButton1</button>
+            <button mat-button  (click)="openSnackBar('Car liked', 'ok')">LIKE</button>
             <button mat-button>RandomButton2</button>
         </mat-card-actions>
     </mat-card>
