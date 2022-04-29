@@ -15,6 +15,8 @@ import { FunnycarsComponent } from './funnycars/funnycars.component';
 import { MapComponent } from './map/map.component';
 import { FestivalsComponent } from './festivals/festivals.component';
 import { carFilterPipe } from './cars/car-filter.pipe';
+import { WdFilterPipe } from './cars/wd-filter.pipe';
+import { CountryFilterPipe } from './cars/country-filter';
 
 const allRoutes: Routes =[
       {path: 'cars', component: CarsComponent},
@@ -31,7 +33,9 @@ const allRoutes: Routes =[
     FunnycarsComponent,
     MapComponent,
     FestivalsComponent,
-    carFilterPipe
+    carFilterPipe,
+    WdFilterPipe,
+    CountryFilterPipe
   ],
   imports: [
     RouterModule.forRoot(allRoutes),

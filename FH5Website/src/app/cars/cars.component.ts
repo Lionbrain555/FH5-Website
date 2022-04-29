@@ -10,9 +10,13 @@ import { CARS } from './mock-cars';
 export class CarsComponent implements OnInit {
   searchTerm: string;
   cars = CARS;
+  filterTerm: string;
+  countryFilterTerm: string;
 
   constructor(private _snackBar: MatSnackBar) {
-    this.searchTerm = ""
+    this.searchTerm = "";
+    this.filterTerm = "";
+    this.countryFilterTerm = "";
   }
 
   ngOnInit(): void {
@@ -24,5 +28,4 @@ export class CarsComponent implements OnInit {
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action);
   }
-
 }

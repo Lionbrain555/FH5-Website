@@ -1,18 +1,42 @@
 <div class="form-group" style="display:flex;justify-content:center">
-  <input type="text" class="form-control" placeholder="Search by Modelname"
+  <mat-form-field class="formfield-margin">
+    <input matInput type="text" class="form-control" placeholder="Search by Modelname"
       style="width: 300px" [(ngModel)]="searchTerm" />
-  <button *ngIf="searchTerm" matSuffix mat-icon-button aria-label="Clear" (click)="searchTerm=''">
-    <mat-icon>close</mat-icon>
-  </button>
+    <button *ngIf="searchTerm" matSuffix mat-icon-button aria-label="Clear" (click)="searchTerm=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <mat-form-field style="margin-top:8px">
+    <mat-label>Drive</mat-label>
+    <mat-select [(value)]="filterTerm">
+      <mat-option>None</mat-option>
+      <mat-option value="awd">All-Wheel-Drive</mat-option>
+      <mat-option value="rwd">Rear-Wheel-Drive</mat-option>
+    </mat-select>
+  </mat-form-field>
+    <mat-form-field style="margin-top:8px">
+    <mat-label>Country</mat-label>
+    <mat-select [(value)]="countryFilterTerm">
+      <mat-option>None</mat-option>
+      <mat-option value="France">France</mat-option>
+      <mat-option value="Germany">Germany</mat-option>
+      <mat-option value="Italy">Italy</mat-option>
+      <mat-option value="Japan">Japan</mat-option>
+      <mat-option value="Mexico">Mexico</mat-option>
+      <mat-option value="Sweden">Sweden</mat-option>
+      <mat-option value="United Kingdom">United Kingdom</mat-option>
+      <mat-option value="United States of America">United States of America</mat-option>
+    </mat-select>
+  </mat-form-field>
 </div>
 <div class="car-card-wrapper" >
-    <mat-card class="car-card" *ngFor="let auto of cars | carfilter:searchTerm">
+    <mat-card class="car-card" *ngFor="let auto of cars | carfilter:searchTerm | wdfilter:filterTerm | countryFilter:countryFilterTerm">
         <mat-card-header>
             <div mat-card-avatar class="car-card-image " [style.background-image]="'url(' + auto.brandpic + ')'"></div>
             <mat-card-title>{{auto.model}}</mat-card-title>
             <mat-card-subtitle>{{auto.brand}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{auto.imageurl}} style="max-height:243px; min-height: 243px; min-width:432px; max-width:432px">
+        <img mat-card-image src={{auto.imageurl}} style="max-height:243px; min-height: 243px; min-width: 432px; max-width:432px">
         <mat-card-content>
             <p>{{auto.country}}</p>
             <p>{{auto.topspeed}}</p>
@@ -24,3 +48,4 @@
         </mat-card-actions>
     </mat-card>
 </div>
+
