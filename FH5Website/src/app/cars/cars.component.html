@@ -1,12 +1,12 @@
 <div class="form-group" style="display:flex;justify-content:center">
-  <mat-form-field class="formfield-margin">
+  <mat-form-field class="themargin">
     <input matInput type="text" class="form-control" placeholder="Search by Modelname"
       style="width: 300px" [(ngModel)]="searchTerm" />
     <button *ngIf="searchTerm" matSuffix mat-icon-button aria-label="Clear" (click)="searchTerm=''">
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
-  <mat-form-field style="margin-top:8px">
+  <mat-form-field class="themargin">
     <mat-label>Drive</mat-label>
     <mat-select [(value)]="filterTerm">
       <mat-option>None</mat-option>
@@ -14,7 +14,7 @@
       <mat-option value="rwd">Rear-Wheel-Drive</mat-option>
     </mat-select>
   </mat-form-field>
-    <mat-form-field style="margin-top:8px">
+    <mat-form-field class="themargin">
     <mat-label>Country</mat-label>
     <mat-select [(value)]="countryFilterTerm">
       <mat-option>None</mat-option>
@@ -28,9 +28,11 @@
       <mat-option value="United States of America">United States of America</mat-option>
     </mat-select>
   </mat-form-field>
+  <mat-checkbox class="themarginbox" [(ngModel)]="sortingActive">Sort by Speed</mat-checkbox>
+  <mat-checkbox class="themarginbox" [(ngModel)]="alphabetSortingActive">Sort by brand</mat-checkbox>
 </div>
 <div class="car-card-wrapper" >
-    <mat-card class="car-card" *ngFor="let auto of cars | carfilter:searchTerm | wdfilter:filterTerm | countryFilter:countryFilterTerm">
+    <mat-card class="car-card" *ngFor="let auto of cars | carfilter:searchTerm | wdfilter:filterTerm | countryFilter:countryFilterTerm | Sorter:sortingActive | alphabetSorter:alphabetSortingActive">
         <mat-card-header>
             <div mat-card-avatar class="car-card-image " [style.background-image]="'url(' + auto.brandpic + ')'"></div>
             <mat-card-title>{{auto.model}}</mat-card-title>
@@ -39,7 +41,7 @@
         <img mat-card-image src={{auto.imageurl}} style="max-height:243px; min-height: 243px; min-width: 432px; max-width:432px">
         <mat-card-content>
             <p>{{auto.country}}</p>
-            <p>{{auto.topspeed}}</p>
+            <p>{{auto.topspeed}}km/h</p>
             <p>{{auto.wd}}</p>
         </mat-card-content>
         <mat-card-actions>

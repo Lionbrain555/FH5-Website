@@ -12,11 +12,17 @@ export class CarsComponent implements OnInit {
   cars = CARS;
   filterTerm: string;
   countryFilterTerm: string;
+  sorterTerm: number;
+  sortingActive: boolean;
+  alphabetSortingActive: boolean;
 
   constructor(private _snackBar: MatSnackBar) {
     this.searchTerm = "";
     this.filterTerm = "";
     this.countryFilterTerm = "";
+    this.sorterTerm = 0;
+    this.sortingActive = false;
+    this.alphabetSortingActive = false;
   }
 
   ngOnInit(): void {
