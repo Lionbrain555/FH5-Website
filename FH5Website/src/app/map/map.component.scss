@@ -2,3 +2,16 @@
     max-width: 100%;
     max-height: 100%;
 }
+input[type=checkbox] {
+  display: none;
+}
+
+.container img {
+  transition: transform 4s ease;
+  cursor: zoom-in;
+}
+
+input[type=checkbox]:checked ~ label > img {
+  transform: scale(2);
+  cursor: zoom-out;
+}

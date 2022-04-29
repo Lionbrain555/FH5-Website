@@ -1,11 +1,18 @@
+<div class="form-group" style="display:flex;justify-content:center">
+  <input type="text" class="form-control" placeholder="Search by Modelname"
+      style="width: 300px" [(ngModel)]="searchTerm" />
+  <button *ngIf="searchTerm" matSuffix mat-icon-button aria-label="Clear" (click)="searchTerm=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
 <div class="car-card-wrapper" >
-    <mat-card class="car-card" *ngFor="let auto of cars">
+    <mat-card class="car-card" *ngFor="let auto of cars | carfilter:searchTerm">
         <mat-card-header>
             <div mat-card-avatar class="car-card-image " [style.background-image]="'url(' + auto.brandpic + ')'"></div>
             <mat-card-title>{{auto.model}}</mat-card-title>
             <mat-card-subtitle>{{auto.brand}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{auto.imageurl}}>
+        <img mat-card-image src={{auto.imageurl}} style="max-height:243px; min-height: 243px; min-width:432px; max-width:432px">
         <mat-card-content>
             <p>{{auto.country}}</p>
             <p>{{auto.topspeed}}</p>

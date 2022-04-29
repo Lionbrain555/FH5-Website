@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
+  private entered:boolean= true;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
